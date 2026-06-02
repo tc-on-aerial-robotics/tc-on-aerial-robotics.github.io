@@ -41,8 +41,10 @@ const homepageCollection = defineCollection({
           description: z.string().optional(),
           image: z.string().optional(),
           image_secondary: z.string().optional(),
+          image_col: z.string().optional(),
           image_width: z.string().optional(),
           list: z.array(z.string()).optional(),
+          text_col: z.string().optional(),
           video: z
             .object({
               thumbnail: z.string(),
@@ -137,15 +139,21 @@ const aboutCollection = defineCollection({
 
     // Team Members
     members: z.object({
-      title: z.string(),
-      description: z.string(),
-      member_list: z.array(
+      title: z.string().optional(),
+      description: z.string().optional(),
+      groups: z.array(
         z.object({
-          name: z.string(),
-          field: z.string(),
-          image: z.string(),
-          email: z.string().optional(),
-          webpage: z.string().optional(),
+          title: z.string(),
+          description: z.string().optional(),
+          member_list: z.array(
+            z.object({
+              name: z.string(),
+              field: z.string(),
+              image: z.string(),
+              email: z.string().optional(),
+              webpage: z.string().optional(),
+            }),
+          ),
         }),
       ),
     }),

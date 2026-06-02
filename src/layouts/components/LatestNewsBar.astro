@@ -1,0 +1,37 @@
+---
+import { getBlogListing } from "@/lib/blogListing";
+import { withBasePath } from "@/lib/utils/basePath";
+import dateFormat from "@/lib/utils/dateFormat";
+
+const { sortedPosts } = await getBlogListing("newest");
+const latestPosts = sortedPosts.slice(0, 3);
+---
+
+{
+  latestPosts.length > 0 && (
+    <section class="latest-news-bar">
+      <div class="container">
+        <div class="latest-news-bar-inner">
+          <p class="latest-news-label">Latest News</p>
+          <ul class="latest-news-list">
+            {latestPosts.map((post) => (
+              <li class="latest-news-item">
+                <a
+                  class="latest-news-link"
+                  href={withBasePath(`/blog/${post.id}/`)}
+                >
+                  <span class="latest-news-title">{post.data.title}</span>
+                  {post.data.date && (
+                    <span class="latest-news-date">
+                      {dateFormat(post.data.date, "MMM d, yyyy")}
+                    </span>
+                  )}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  )
+}

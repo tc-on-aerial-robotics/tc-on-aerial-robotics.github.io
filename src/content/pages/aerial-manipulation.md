@@ -8,6 +8,24 @@ image: ""
 
 <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
   <figure class="rounded-xl bg-white p-4 shadow-lg">
+    <img class="aspect-video w-full rounded-lg object-cover" src="../images/aerial/manipulation1.png" />
+    <figcaption class="mt-3 text-sm text-text-dark">
+    Distributed NMPC for Cooperative Aerial Manipulation of Cable-Suspended Loads
+          <a href="https://ieeexplore.ieee.org/abstract/document/11145772/ " target="_blank" rel="noopener noreferrer">RAL, 2025</a>
+    </figcaption>
+  </figure>
+
+
+  <figure class="rounded-xl bg-white p-4 shadow-lg">
+    <img class="aspect-video w-full rounded-lg object-cover" src="../images/aerial/manipulation2.jpg" />
+    <figcaption class="mt-3 text-sm text-text-dark">
+    Aerial additive manufacturing with multiple autonomous robots.
+    <a href="https://www.nature.com/articles/s41586-022-04988-4"
+    target="_blank" rel="noopener noreferrer">Nature, 2022</a>
+    </figcaption>
+  </figure>
+
+  <figure class="rounded-xl bg-white p-4 shadow-lg">
     <img class="aspect-video w-full rounded-lg object-cover" src="../images/aerial/cad-concept-300x229.jpg" alt="CAD concept of aerial manipulation" />
     <figcaption class="mt-3 text-sm text-text-dark">CAD concept of aerial manipulation.</figcaption>
   </figure>

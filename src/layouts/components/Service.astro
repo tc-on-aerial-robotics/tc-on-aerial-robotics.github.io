@@ -2,7 +2,7 @@
 import InterestGroups from "@/layouts/components/InterestGroups.astro";
 import VideoComponent from "@/layouts/function-components/VideoComponent";
 import { withBasePath } from "@/lib/utils/basePath";
-import { markdownify } from "@/lib/utils/textConverter";
+import { markdownify, markdownifyBlock } from "@/lib/utils/textConverter";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
@@ -12,6 +12,8 @@ type Props = {
 const { service } = Astro.props;
 const { homepage_tab, our_scope } = service;
 const isRemoteImage = (src?: string) => src?.startsWith("http");
+const getMediaColClass = (item: (typeof our_scope)[number]) => item.image_col ?? "lg:col-5";
+const getTextColClass = (item: (typeof our_scope)[number]) => item.text_col ?? "lg:col-7";
 ---
 
 <section class="section services">
@@ -25,9 +27,9 @@ const isRemoteImage = (src?: string) => src?.startsWith("http");
               : "mt-12 border-t border-border pt-12 lg:mt-10"
           }`}
         >
-          <div class={`lg:col-7 ${index % 2 === 0 ? "order-0" : "order-1"}`}>
-            {item.image && (
-              <div class="relative">
+          {(item.image || item.video) && (
+            <div class={`${getMediaColClass(item)} ${index % 2 === 0 ? "order-0" : "order-1"}`}>
+              {item.image && (
                 <div
                   class={`mx-auto gap-4 ${
                     item.image_secondary
@@ -79,37 +81,45 @@ const isRemoteImage = (src?: string) => src?.startsWith("http");
                       ))
                   }
                 </div>
-                <Image
-                  class="absolute bottom-6 left-1/2 -z-[1] -translate-x-1/2"
-                  src={withBasePath("/images/shape-2.png")}
-                  alt=""
-                  height={147}
-                  width={151}
+              )}
+              {item.video && (
+                <VideoComponent
+                  client:load
+                  src={item.video.thumbnail}
+                  height={370}
+                  width={700}
+                  title={item.title}
+                  video_id={item.video.video_id}
+                  video_width="w-[700px]"
+                  video_height="h-[370px]"
                 />
-              </div>
-            )}
-            {item.video && (
-              <VideoComponent
-                client:load
-                src={item.video.thumbnail}
-                height={370}
-                width={700}
-                title={item.title}
-                video_id={item.video.video_id}
-                video_width="w-[700px]"
-                video_height="h-[370px]"
-              />
-            )}
-          </div>
+              )}
+            </div>
+          )}
           <div
-            class={`mt-6 lg:col-5 lg:mt-0 ${
-              index % 2 === 0 ? "order-1" : "order-0"
+            class={`${item.image || item.video ? `mt-6 ${getTextColClass(item)} lg:mt-0` : "lg:col-12"} ${
+              item.image || item.video
+                ? index % 2 === 0
+                  ? "order-1"
+                  : "order-0"
+                : ""
             }`}
           >
-            <div class="text-container">
+            <div
+              class={
+                item.image || item.video
+                  ? item.text_col
+                    ? "w-full max-w-none"
+                    : "text-container"
+                  : "w-full max-w-none"
+              }
+            >
               <h2 class="lg:text-4xl" set:html={markdownify(item.title)} />
               {item.description && (
-                <p class="mt-4" set:html={markdownify(item.description)} />
+                <div
+                  class="mt-4 [&>p]:mb-6 [&>p:last-child]:mb-0"
+                  set:html={markdownifyBlock(item.description)}
+                />
               )}
               {item.button && item.button.enable && (
                 <a class="btn btn-white mt-6" href={withBasePath(item.button.link)}>

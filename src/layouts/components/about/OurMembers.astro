@@ -9,65 +9,77 @@ type Props = {
 };
 
 const {
-  members: { title, description, member_list },
+  members: { title, description, groups },
 } = Astro.props;
 ---
 
 <section class="section">
   <div class="container">
-    <div class="row">
-      <div class="mx-auto text-center lg:col-6">
-        <h2 set:html={markdownify(title)} />
-        <p class="mt-4" set:html={markdownify(description)} />
-      </div>
-    </div>
-    <div class="row mt-12 justify-center">
-      <div class="lg:col-10">
+    {
+      (title || description) && (
         <div class="row">
-          {
-            member_list.map((item) => (
-              <div class="mb-6 flex flex-col px-6 text-center sm:col-6 lg:col-4 sm:items-center">
-                <div class="member-avatar inline-flex justify-center">
-                  <Image
-                    height={220}
-                    width={180}
-                    class="h-56 w-44 object-cover"
-                    src={withBasePath(item.image)}
-                    alt=""
-                  />
-                </div>
-                <div class="mt-6 w-full flex-1 rounded-xl bg-white px-4 py-8 shadow-lg">
-                  <h5 class="font-primary" set:html={markdownify(item.name)} />
-                  <p class="mt-1.5" set:html={markdownify(item.field)} />
-                  {
-                    item.email && (
-                      <p class="mt-3">
-                        <a href={`mailto:${item.email}`} class="hover:text-primary">
-                          {item.email}
-                        </a>
-                      </p>
-                    )
-                  }
-                  {
-                    item.webpage && (
-                      <p class="mt-2">
-                        <a
-                          href={item.webpage}
-                          class="hover:text-primary hover:underline"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Webpage
-                        </a>
-                      </p>
-                    )
-                  }
-                </div>
-              </div>
-            ))
-          }
+          <div class="mx-auto text-center lg:col-6">
+            {title && <h2 set:html={markdownify(title)} />}
+            {description && <p class="mt-4" set:html={markdownify(description)} />}
+          </div>
         </div>
-      </div>
-    </div>
+      )
+    }
+    {
+      groups.map((group, groupIndex) => (
+        <div class={`row justify-center ${groupIndex > 0 ? "mt-16" : "mt-12"}`}>
+          <div class="lg:col-10">
+            <div class="mb-8 text-center">
+              <h3 class="h4" set:html={markdownify(group.title)} />
+              {group.description && (
+                <p class="mt-3" set:html={markdownify(group.description)} />
+              )}
+            </div>
+            <div class="row">
+              {group.member_list.map((item) => (
+                <div class="mb-6 px-5 text-center sm:col-6 lg:col-4">
+                  <div class="mx-auto flex h-full max-w-[220px] flex-col">
+                    <div class="mb-4 flex justify-center">
+                      <Image
+                        height={180}
+                        width={150}
+                        class="h-44 w-36 rounded-lg object-cover"
+                        src={withBasePath(item.image)}
+                        alt=""
+                      />
+                    </div>
+                    <h5 class="font-primary" set:html={markdownify(item.name)} />
+                    <p class="mt-1.5" set:html={markdownify(item.field)} />
+                    {
+                      item.email && (
+                        <p class="mt-3 text-sm">
+                          <a href={`mailto:${item.email}`} class="hover:text-primary">
+                            {item.email}
+                          </a>
+                        </p>
+                      )
+                    }
+                    {
+                      item.webpage && (
+                        <p class="mt-2 text-sm">
+                          <a
+                            href={item.webpage}
+                            class="hover:text-primary hover:underline"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Webpage
+                          </a>
+                        </p>
+                      )
+                    }
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))
+    }
   </div>
 </section>

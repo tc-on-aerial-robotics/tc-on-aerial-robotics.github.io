@@ -1,6 +1,6 @@
 ---
-title: "Terms & Condition Of Pinwheel"
-excerpt: Donec sollicitudin molestie malesda. Donec sollitudin molestie male <br /> suada Mauris pellentesque nec egestas non nisi Cras
+title: "Terms & Conditions of Pinwheel"
+excerpt: Donec sollicitudin molestie malesuada. <br /> Mauris pellentesque nec egestas non nisi Cras.
 draft: false
 ---
 

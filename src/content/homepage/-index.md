@@ -9,34 +9,41 @@ banner:
     link: "https://aerial-robotics-workshop-icra.com/"
 service:
   our_scope:
-    - title: "Scope"
-      description: "Flying opens new opportunities to robotically perform services and tasks like search and rescue, observation, mapping or even inspection and maintenance. As such, substantial interest in aerial robots has grown in recent years. Key areas to be addressed include innovative Unmanned Aerial Vehicles design, autonomous missions, guidance, navigation and control, and multi-vehicle coordination."
-      image: "/images/Imagen-1-1.png"
-      image_width: "w-[90%]"
-    - title: "Objective"
-      description: "The technical committee will promote exchanges among researchers from academia, industry and government. The purpose is to identify the technologies and technical approaches to advance and mature the field of aerial robotics. Exchanges include conferences, workshops, special sessions in conferences and publications to promote discussion on technical and applicative problems. Envisioned will be on-line and printed resources to disseminate knowledge including cross-disciplinary information like aerodynamics, propulsion, communications, controls and sensors."
-      image: "/images/Imagen-3-e1539859865849.png"
-    - title: "Topics of Interest"
+    - title: "Scope and Mission"
+      description: |
+        Aerial robotics is now a mature and well-established research field, built over several decades of scientific and technological progress. In parallel, many applications of unmanned aerial vehicles — commonly referred to as drones — are progressively reaching industrial maturity, with increasing deployment in inspection, monitoring, mapping, logistics, agriculture, emergency response, and other domains.
+        
+        
+        At the same time, aerial robotics remains a highly active and rapidly evolving research area. Many fundamental and applied challenges are still open, particularly in autonomous navigation, perception, planning and control, bio-inspired aerial design, hybrid and multimodal locomotion, aerial manipulation, physical interaction, multi-robot cooperation, safety, resilience, and long-term deployment in complex environments. Addressing these challenges will be essential to unlock the next generation of aerial robotic systems and enable new applications that go beyond the capabilities of current drone technologies.
+        
+        
+        The IEEE RAS Technical Committee on Aerial Robotics and UAVs aims to bring together researchers, practitioners, students, and industry stakeholders working across the broad spectrum of aerial robotics. The TC promotes scientific exchange, community building, and dissemination around emerging topics and open challenges in the field. It also supports the transfer of research results toward real-world applications, encourages interaction between academia and industry, and fosters an inclusive and diverse community.
+    - title: "Focus Areas"
       description: "Include but not limited to:"
       image: "/images/Imagen-4.png"
+      image_col: "lg:col-5"
+      text_col: "lg:col-7"
       list:
-        - "Airframe design"
-        - "UAS autonomy: perception, planning and control"
-        - "UAS guidance, navigation and control"
-        - "Sense and avoid"
-        - "Human-computer interfaces"
-        - "Propulsion and engines"
-        - "Aerial vehicle teams"
-        - "Aerial manipulation"
-        - "UAS integration in non-segregated airspaces"
-        - "Aerial robotics and UAV applications"
+        - Aerial robot design, modeling, and control
+        - Autonomous navigation, perception, localization, and mapping
+        - Motion planning, trajectory generation, and decision making
+        - Bio-inspired, soft, morphing, and reconfigurable aerial systems
+        - Hybrid aerial-ground, aerial-aquatic, and multimodal robots
+        - Aerial manipulation and physical interaction
+        - Cooperative and distributed multi-UAV systems
+        - Human-aerial robot interaction and shared autonomy
+        - Learning-based and data-driven methods for aerial robotics
+        - Safety, robustness, certification, and deployment in real-world environments
+        - Field applications, industrial transfer, and societal impact
     - title: "Future directions"
       description: ""
       image: "https://d2pn8kiwq2w21t.cloudfront.net/original_images/rollocopter.jpg"
       image_secondary: "https://news.cnrs.fr/sites/default/files/styles/visuel_principal/public/assets/images/image_1_72dpi.jpg"
+      image_col: "lg:col-6"
+      text_col: "lg:col-6"
       list:
         - Next generation designs to increase flight endurance and safety in the interaction with people, as well as hybrid aerial-ground locomotion robots
-        - Dextereous Aerial Robotic Manipulation by including Multi UAV aerial manipulation
+        - Dexterous aerial robotic manipulation, including multi-UAV aerial manipulation
         - Very agile and fast aerial robots, and large teams of robots, based on environment perception with limited computation and power capabilities
 
   homepage_tab:
@@ -44,11 +51,11 @@ service:
     description: ""
     tab_list:
       - title: "IG1: Unmanned aerial systems"
-        content: "This interest group emphasizes unmanned aerial vehicles from large platforms until small  vehicles and a large variety of systems and applications."
+        content: "This interest group emphasizes unmanned aerial vehicles ranging from large platforms to small vehicles and a large variety of systems and applications."
         icon: "FiLock"
         image: "/images/sells-by-country.png"
       - title: "IG2: Aerial robotic systems physically interacting with the environment"
-        content: "This interest group focalizes on the methods and technologies required for the development of aerial robots physically interacting with objects and with other aerial vehicles. Aerial robotic manipulation is a main subject in this interest group."
+        content: "This interest group focuses on the methods and technologies required for the development of aerial robots physically interacting with objects and with other aerial vehicles. Aerial robotic manipulation is a main subject in this interest group."
         icon: "FiClock"
         image: "/images/collaboration.png"
       - title: "IG3: Perception based aerial robotics"

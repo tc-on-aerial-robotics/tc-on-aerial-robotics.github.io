@@ -5,7 +5,7 @@
 
 /* container */
 .container {
-  @apply mx-auto! max-w-[1202px]! px-3!;
+  @apply mx-auto! max-w-[1080px]! px-3!;
 }
 
 /* social icons */
@@ -258,6 +258,38 @@ select:invalid {
 .video-play-btn {
   @apply absolute left-1/2 top-1/2 z-10 flex h-[78px] w-[78px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-primary cursor-pointer;
   animation: shadow-pulse 1.5s infinite;
+}
+
+.latest-news-bar {
+  @apply py-5;
+}
+
+.latest-news-bar-inner {
+  @apply rounded-2xl border border-border/70 bg-light/50 px-5 py-4 md:px-6;
+}
+
+.latest-news-label {
+  @apply mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-text-dark/70;
+}
+
+.latest-news-list {
+  @apply m-0 grid list-none gap-2.5 md:grid-cols-3;
+}
+
+.latest-news-item {
+  @apply m-0;
+}
+
+.latest-news-link {
+  @apply flex items-center justify-between gap-3 rounded-xl bg-white/65 px-4 py-3 text-sm no-underline transition-colors duration-200 hover:bg-white;
+}
+
+.latest-news-title {
+  @apply text-text-dark;
+}
+
+.latest-news-date {
+  @apply shrink-0 whitespace-nowrap text-xs text-text/80;
 }
 
 .video-play-btn svg {

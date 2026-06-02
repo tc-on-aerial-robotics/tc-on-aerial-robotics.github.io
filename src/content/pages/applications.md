@@ -7,6 +7,32 @@ image: ""
 ---
 
 <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+
+
+  <figure class="rounded-xl bg-white p-4 shadow-lg">
+    <img
+      class="mx-auto max-h-50 w-auto rounded-lg object-contain"
+      src="../images/aerial/app2.png"
+    />
+    <figcaption class="mt-3 text-sm text-text-dark">
+      Flying Smartphones by Qualcomm and UPenn researchers led by Vijay Kumar.
+    </figcaption>
+  </figure>
+
+
+
+  <figure class="rounded-xl bg-white p-4 shadow-lg">
+    <img
+      class="mx-auto max-h-50 w-auto rounded-lg object-contain"
+      src="../images/aerial/app1.png"
+    />
+    <figcaption class="mt-3 text-sm text-text-dark">
+      Sailing-flying vehicles for fresh water monitoring, 
+      <a href="https://ieeexplore.ieee.org/abstract/document/10923704" target="_blank" rel="noopener noreferrer">JFR 2025</a>
+    </figcaption>
+  </figure>
+
+
   <figure class="rounded-xl bg-white p-4 shadow-lg">
     <img
       class="mx-auto max-h-50 w-auto rounded-lg object-contain"

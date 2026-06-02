@@ -1,12 +1,17 @@
 ---
-title: "Fixed wing UAVs"
-page_title: "Fixed wing UAVs"
-meta_title: "Fixed wing UAVs | IEEE Aerial Robotics and UAVs"
-description: "Fixed wing UAVs are efficient airborne platforms used for long-range flight, gliding, launching, and solar-powered missions."
+title: "Fixed-wing UAVs"
+page_title: "Fixed-wing UAVs"
+meta_title: "Fixed-wing UAVs | IEEE Aerial Robotics and UAVs"
+description: "Fixed-wing UAVs are efficient airborne platforms used for long-range flight, gliding, launching, and solar-powered missions."
 image: ""
 ---
 
 <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+  <figure class="rounded-xl bg-white p-4 shadow-lg">
+    <img class="aspect-video w-full rounded-lg object-cover" src="../images/aerial/fixwing1.png" />
+    <figcaption class="mt-3 text-sm text-text-dark">New multihole pitot tube for fixed-wing aircraft. <a href="https://ieeexplore.ieee.org/abstract/document/11145343" target="_blank" rel="noopener noreferrer">RAL 2025</a></figcaption>
+  </figure>
+
   <figure class="rounded-xl bg-white p-4 shadow-lg">
     <img class="aspect-video w-full rounded-lg object-cover" src="../images/aerial/foto1-300x82.png" alt="Gliding of fixed wing UAV from CSOIS UAS used in NSF Rapid Project" />
     <figcaption class="mt-3 text-sm text-text-dark">Gliding of fixed wing UAV from CSOIS UAS used in NSF Rapid Project.</figcaption>

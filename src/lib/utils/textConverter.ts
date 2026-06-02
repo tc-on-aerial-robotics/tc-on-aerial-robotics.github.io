@@ -15,6 +15,13 @@ export const markdownify = (content: string) => {
   return marked.parseInline(content);
 };
 
+// block-level markdownify for paragraphs, lists, etc.
+export const markdownifyBlock = (content: string) => {
+  if (!content) return null;
+
+  return marked.parse(content);
+};
+
 // humanize
 export const humanize = (content: string) => {
   if (!content) return null;
