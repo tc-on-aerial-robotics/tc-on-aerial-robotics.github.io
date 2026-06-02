@@ -24,7 +24,7 @@ npm run dev
 Open:
 
 ```text
-http://localhost:4321/tc-on-aerial-robotics/
+http://localhost:4321/
 ```
 
 ## Production Check
@@ -40,7 +40,3 @@ Preview the production build locally:
 ```bash
 npm run preview
 ```
-
-## Notes
-- The configured base path is `/tc-on-aerial-robotics/`, so the local URL includes that path.
-- `yarn install && yarn dev` also works if you prefer Yarn.
