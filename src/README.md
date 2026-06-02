@@ -42,7 +42,5 @@ npm run preview
 ```
 
 ## Notes
-
-- The site uses Astro.
 - The configured base path is `/tc-on-aerial-robotics/`, so the local URL includes that path.
 - `yarn install && yarn dev` also works if you prefer Yarn.
