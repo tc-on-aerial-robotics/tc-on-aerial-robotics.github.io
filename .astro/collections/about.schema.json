@@ -156,40 +156,57 @@
             "description": {
               "type": "string"
             },
-            "member_list": {
+            "groups": {
               "type": "array",
               "items": {
                 "type": "object",
                 "properties": {
-                  "name": {
+                  "title": {
                     "type": "string"
                   },
-                  "field": {
+                  "description": {
                     "type": "string"
                   },
-                  "image": {
-                    "type": "string"
-                  },
-                  "email": {
-                    "type": "string"
-                  },
-                  "webpage": {
-                    "type": "string"
+                  "member_list": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "field": {
+                          "type": "string"
+                        },
+                        "image": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "webpage": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "field",
+                        "image"
+                      ],
+                      "additionalProperties": false
+                    }
                   }
                 },
                 "required": [
-                  "name",
-                  "field",
-                  "image"
+                  "title",
+                  "member_list"
                 ],
                 "additionalProperties": false
               }
             }
           },
           "required": [
-            "title",
-            "description",
-            "member_list"
+            "groups"
           ],
           "additionalProperties": false
         },
