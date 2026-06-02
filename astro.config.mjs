@@ -41,8 +41,8 @@ const fontsConfig = Object.entries(theme.fonts.font_family)
   });
 
 export default defineConfig({
-  site: "https://yuwei-wu.github.io/tc-on-aerial-robotics/",
-  base: "/tc-on-aerial-robotics/",
+  site: "https://tc-on-aerial-robotics.github.io/",
+  base: "",
   trailingSlash: "always",
 
   vite: { plugins: [tailwindcss()] },
