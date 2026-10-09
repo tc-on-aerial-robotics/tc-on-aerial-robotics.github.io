@@ -148,8 +148,8 @@ const aboutCollection = defineCollection({
           member_list: z.array(
             z.object({
               name: z.string(),
-              field: z.string(),
-              image: z.string(),
+              field: z.string().optional(),
+              image: z.string().optional(),
               email: z.string().optional(),
               webpage: z.string().optional(),
             }),

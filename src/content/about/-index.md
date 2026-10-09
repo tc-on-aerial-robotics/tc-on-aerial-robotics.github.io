@@ -7,7 +7,7 @@ image: ""
 members:
   description: ""
   groups:
-    - title: "Co-chairs"
+    - title: "Co-Chairs"
       description: ""
       member_list:
         - name: "Marco Tognon"
@@ -30,7 +30,20 @@ members:
           email: "hcshim@kaist.ac.kr"
           webpage: "https://ee.kaist.ac.kr/en/professor/16044/"
           image: "/images/leadership/hcshim2-e1757064737253.jpg"
-    - title: "Honored former chairs"
+    - title: "Associate Chairs"
+      description: ""
+      member_list:
+        - name: "Melissa Greeff"
+          field: "Queen's University - Ingenuity Labs Research Institute"
+          email: "melissa.greeff@queensu.ca"
+          webpage: "https://ingenuitylabs.queensu.ca/people/melissa-greeff"
+          image: "https://ingenuitylabs.queensu.ca/sites/ilriwww/files/styles/people_directory_page_image/public/2024-02/Melissa-Greeff-5.jpg?h=f77fc97b&itok=sbXMbjAj"
+        - name: "Guanrui Li"
+          field: "Worcester Polytechnic Institute - Aerial-robot Control and Perception Lab"
+          email: "gli7@wpi.edu"
+          webpage: "https://www.wpi.edu/people/faculty/gli7"
+          image: "https://lguanrui.github.io/images/guanrui_profile.png"
+    - title: "Former Chairs"
       description: ""
       member_list:
         - name: "Aníbal Ollero"
@@ -43,7 +56,7 @@ members:
           email: "loiannog@berkeley.edu"
           webpage: "https://www2.eecs.berkeley.edu/Faculty/Homepages/loiannog.html"
           image: "/images/leadership/Loianno-e1741018406602.jpg"
-    - title: "Student representatives"
+    - title: "Student Representatives"
       description: ""
       member_list:
         - name: "Yuwei Wu"

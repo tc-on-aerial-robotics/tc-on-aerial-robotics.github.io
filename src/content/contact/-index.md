@@ -1,6 +1,6 @@
 ---
-title: Contact
-page_title: Contact
+title: Contact Us
+page_title: Contact Us
 meta_title: ""
 description: "Join the IEEE Aerial Robotics and UAVs technical committee mailing list."
 image: ""

@@ -189,9 +189,7 @@
                         }
                       },
                       "required": [
-                        "name",
-                        "field",
-                        "image"
+                        "name"
                       ],
                       "additionalProperties": false
                     }

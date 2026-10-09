@@ -1,7 +1,6 @@
 ---
 import { markdownify } from "@/lib/utils/textConverter";
 import { withBasePath } from "@/lib/utils/basePath";
-import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
 type Props = {
@@ -39,17 +38,19 @@ const {
               {group.member_list.map((item) => (
                 <div class="mb-6 px-5 text-center sm:col-6 lg:col-3">
                   <div class="mx-auto flex h-full max-w-[220px] flex-col">
-                    <div class="mb-4 flex justify-center">
-                      <Image
-                        height={180}
-                        width={150}
-                        class="h-44 w-36 rounded-lg object-cover"
-                        src={withBasePath(item.image)}
-                        alt=""
-                      />
-                    </div>
+                    {item.image && (
+                      <div class="mb-4 flex justify-center">
+                        <img
+                          height={180}
+                          width={150}
+                          class="h-44 w-36 rounded-lg object-cover"
+                          src={item.image.startsWith("https://") ? item.image : withBasePath(item.image)}
+                          alt={`Photo of ${item.name}`}
+                        />
+                      </div>
+                    )}
                     <h5 class="font-primary" set:html={markdownify(item.name)} />
-                    <p class="mt-1.5 text-sm" set:html={markdownify(item.field)} />
+                    {item.field && <p class="mt-1.5 text-sm" set:html={markdownify(item.field)} />}
                     {
                       item.email && (
                         <p class="mt-3 text-sm">
