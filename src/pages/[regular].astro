@@ -28,20 +28,22 @@ const { Content } = await render(page);
   description={description}
   image={image}
 >
-  <Shape />
-  <section class="page-hero pb-14 pt-16">
-    <div class="container">
-      <div class="page-hero-content mx-auto max-w-[883px] text-center">
-        <PageHeader page_data={{ ...page.data }} />
+  <div class={page.id === "ws-icra-2027" ? "icra-2027-page" : ""}>
+    <Shape />
+    <section class="page-hero pb-14 pt-16">
+      <div class="container">
+        <div class="page-hero-content mx-auto max-w-[883px] text-center">
+          <PageHeader page_data={{ ...page.data }} />
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="content">
-        <Content />
+    <section class="section">
+      <div class="container">
+        <div class="content">
+          <Content />
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </Base>

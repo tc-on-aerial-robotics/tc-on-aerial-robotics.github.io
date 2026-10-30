@@ -22,7 +22,7 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<section class="section blog-single">
+<section class:list={["section blog-single", post.id === "icra2026" && "icra-2026-post"]}>
   <div class="container">
     <div class="row justify-center">
       <div class="lg:col-10">
@@ -35,7 +35,7 @@ const { Content } = await render(post);
         />
       </div>
       <div class="mt-10 max-w-[810px] lg:col-9">
-        <h1 class="h2">
+        <h1 class="page-title h2">
           {post.data.title}
         </h1>
         <div class="mb-5 mt-6 flex items-center space-x-2">

@@ -13,6 +13,25 @@
       "url": "/blog/"
     },
     {
+      "name": "Workshops",
+      "url": "",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "ICRA 2027",
+          "url": "/ws-icra-2027/"
+        },
+        {
+          "name": "ICRA 2026",
+          "url": "/blog/icra2026/"
+        },
+        {
+          "name": "ICRA 2025",
+          "url": "/blog/icra2025/"
+        }
+      ]
+    },
+    {
       "name": "Aerial robots and UAVs",
       "url": "",
       "hasChildren": true,

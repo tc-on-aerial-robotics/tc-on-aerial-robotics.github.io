@@ -189,6 +189,45 @@ select:invalid {
   }
 }
 /* content style */
+.page-title:is(h1) {
+  display: block;
+  width: auto;
+  min-height: 0;
+  max-width: 100%;
+  margin-left: 0;
+  background-image: none;
+  padding: 0;
+  color: #111;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.2;
+}
+
+.banner .page-title:is(h1) {
+  display: block;
+  width: auto;
+  min-height: 0;
+  margin-left: 0;
+  background-image: none;
+  padding: 0;
+  color: #fff;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  text-align: left;
+}
+
+.page-hero:has(.page-title:is(h1)) {
+  padding-top: 2rem;
+  padding-bottom: 0;
+}
+
+.page-hero .page-title:is(h1) {
+  margin-bottom: 0;
+}
+
+.page-hero:has(.page-title:is(h1)) + .section {
+  padding-top: 0;
+}
+
 .content {
   @apply [&>*:first-child]:mt-0 [&>*:first-child]:pt-0;
   @apply prose max-w-none;
@@ -238,6 +277,40 @@ select:invalid {
   h4 + ul {
     @apply mt-5;
   }
+}
+
+.icra-2027-page {
+  .content h2 {
+    font-size: 1.25rem;
+  }
+
+  .content h3 {
+    font-size: 1.125rem;
+  }
+
+  .content :is(p, li, th, td) {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .content table :is(th, td):first-child {
+    width: 9rem;
+    white-space: nowrap;
+  }
+}
+
+.icra-2026-post .content table :is(th, td):first-child {
+  width: 9rem;
+  white-space: nowrap;
+}
+
+.icra-2026-post .content table :is(th, td) {
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.icra-2026-post .content h2 {
+  font-size: 1.25rem;
 }
 
 .key-feature-grid {

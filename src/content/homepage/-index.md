@@ -5,8 +5,8 @@ banner:
   image: "/images/banner-img.png"
   button:
     enable: true
-    label: "ICRA 2026 Workshop on Aerial Robotics"
-    link: "https://aerial-robotics-workshop-icra.com/"
+    label: "ICRA 2027 Workshop on Aerial Robotics"
+    link: "/ws-icra-2027/"
 service:
   our_scope:
     - title: "Scope and Mission"

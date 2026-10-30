@@ -2,7 +2,7 @@
 title: Social event for Aerial Robotics and Robotics for Environmental Assessment at ICRA 2026
 subtitle: Social event for Aerial Robotics and Robotics for Environmental Assessment
 image: "https://2026.ieee-icra.org/wp-content/uploads/sites/2/2025/07/2026-ieee-icra-org.jpg"
-author: TCs on Aerial Robots
+author: TCs on Aerial Robotics
 date: 2 June, 2026
 categories: ["conference"]
 featured: true
