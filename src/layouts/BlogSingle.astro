@@ -25,16 +25,18 @@ const { Content } = await render(post);
 <section class:list={["section blog-single", post.id === "icra2026" && "icra-2026-post"]}>
   <div class="container">
     <div class="row justify-center">
-      <div class="lg:col-10">
-        <Image
-          class="h-auto w-full max-w-[95%] rounded-xl aspect-video object-cover object-center"
-          src={withBasePath(post.data.image!)}
-          alt={post.data.title}
-          width={920}
-          height={450}
-        />
+      <div class="lg:col-12">
+        <div class="mx-auto w-full max-w-[920px]">
+          <Image
+            class="h-auto w-full rounded-xl object-contain"
+            src={withBasePath(post.data.image!)}
+            alt={post.data.title}
+            width={920}
+            height={450}
+          />
+        </div>
       </div>
-      <div class="mt-10 max-w-[810px] lg:col-9">
+      <div class="mt-10 w-full max-w-[920px] lg:col-12">
         <h1 class="page-title h2">
           {post.data.title}
         </h1>

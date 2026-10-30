@@ -8,6 +8,14 @@
   @apply mx-auto! max-w-[1080px]! px-3!;
 }
 
+.inner-page .container {
+  max-width: 920px !important;
+}
+
+.inner-page .page-hero-content {
+  max-width: 920px;
+}
+
 /* social icons */
 .social-icons {
   @apply space-x-2;
@@ -280,6 +288,12 @@ select:invalid {
 }
 
 .icra-2027-page {
+  .page-hero-content,
+  .content {
+    max-width: 920px;
+    margin-inline: auto;
+  }
+
   .content h2 {
     font-size: 1.25rem;
   }
@@ -297,6 +311,11 @@ select:invalid {
     width: 9rem;
     white-space: nowrap;
   }
+
+  .content table :is(th, td) {
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
 }
 
 .icra-2026-post .content table :is(th, td):first-child {
@@ -305,7 +324,7 @@ select:invalid {
 }
 
 .icra-2026-post .content table :is(th, td) {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   line-height: 1.45;
 }
 
