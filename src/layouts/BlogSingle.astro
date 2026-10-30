@@ -22,7 +22,14 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<section class:list={["section blog-single", post.id === "icra2026" && "icra-2026-post"]}>
+<section
+  class:list={[
+    "section blog-single",
+    post.id === "icra2024" && "icra-2024-post",
+    post.id === "icra2025" && "icra-2025-post",
+    post.id === "icra2026" && "icra-2026-post",
+  ]}
+>
   <div class="container">
     <div class="row justify-center">
       <div class="lg:col-12">

@@ -10,7 +10,8 @@ const about = (await getEntry("about", "-index")) as CollectionEntry<"about">;
 const { members } = about.data;
 const page_data = {
   ...about.data,
-  content: about.body,
+  content:
+    '<span class="text-[10px] leading-tight text-text/60">Alphabetical by first name within each role.</span>',
 };
 ---
 
@@ -27,9 +28,6 @@ const page_data = {
         <PageHeader page_data={page_data} />
       </div>
       <OurMembers members={members} />
-      <p class="mt-4 pb-4 text-center text-[10px] leading-tight text-text/60">
-        Alphabetical by first name within each role.
-      </p>
     </div>
   </section>
 </Base>
