@@ -1,0 +1,48 @@
+---
+import Shape from "@/components/Shape.astro";
+import Base from "@/layouts/Base.astro";
+
+const { title, active = "workshop" } = Astro.props;
+const links = [
+  { id: "workshop", label: "Overview", href: "/ws-icra-2024/" },
+  { id: "call", label: "Call for contributions", href: "/ws-icra-2024/call-for-contributions/" },
+  { id: "speakers", label: "Speakers", href: "/ws-icra-2024/speakers/" },
+  { id: "organizers", label: "Organizers", href: "/ws-icra-2024/organizers/" },
+  { id: "agenda", label: "Agenda", href: "/ws-icra-2024/schedule/" },
+];
+---
+
+<Base title={title} meta_title={title}>
+  <div class="icra-2024-workshop-page">
+    <Shape />
+    <section class="page-hero pb-8 pt-12">
+      <div class="container">
+        <div class="page-hero-content mx-auto max-w-[920px] text-center">
+          <h1 class="page-title mb-5 mt-0">{title}</h1>
+          <img
+            src="/images/icra-2024-workshop-banner.png"
+            alt="ICRA 2024 workshop banner"
+            class="icra-2024-workshop-banner"
+          />
+          <p class="workshop-event-meta">May 13, 2024 · 9:00 am–5:00 pm · Room North G301 · PACIFICO Yokohama, Japan</p>
+        </div>
+        <nav class="workshop-subnav" aria-label="Workshop pages">
+          {links.map((link) => (
+            <a
+              href={link.href}
+              class:list={["workshop-subnav-link", { active: active === link.id }]}
+              aria-current={active === link.id ? "page" : undefined}
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </section>
+    <section class="section pt-0">
+      <div class="container">
+        <div class="content mx-auto max-w-[920px]"><slot /></div>
+      </div>
+    </section>
+  </div>
+</Base>

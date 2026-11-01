@@ -2,6 +2,7 @@
 import PageHeader from "@/components/PageHeader.astro";
 import Shape from "@/components/Shape.astro";
 import Base from "@/layouts/Base.astro";
+import Workshop2027 from "@/layouts/Workshop2027.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 import { render } from "astro:content";
 
@@ -22,28 +23,30 @@ const { title, meta_title, description, image } = page.data;
 const { Content } = await render(page);
 ---
 
-<Base
-  title={title}
-  meta_title={meta_title}
-  description={description}
-  image={image}
->
-  <div class={page.id === "ws-icra-2027" ? "icra-2027-page" : ""}>
-    <Shape />
-    <section class="page-hero pb-14 pt-16">
-      <div class="container">
-        <div class="page-hero-content mx-auto max-w-[883px] text-center">
-          <PageHeader page_data={{ ...page.data }} />
-        </div>
+{
+  page.id === "ws-icra-2027" ? (
+    <Workshop2027 title={page.data.page_title || title} meta_title={meta_title} description={description} active="overview">
+      <Content />
+    </Workshop2027>
+  ) : (
+    <Base title={title} meta_title={meta_title} description={description} image={image}>
+      <div>
+        <Shape />
+        <section class="page-hero pb-14 pt-16">
+          <div class="container">
+            <div class="page-hero-content mx-auto max-w-[920px] text-center">
+              <PageHeader page_data={{ ...page.data }} />
+            </div>
+          </div>
+        </section>
+        <section class="section">
+          <div class="container">
+            <div class="content">
+              <Content />
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="content">
-          <Content />
-        </div>
-      </div>
-    </section>
-  </div>
-</Base>
+    </Base>
+  )
+}

@@ -1,0 +1,44 @@
+---
+import Shape from "@/components/Shape.astro";
+
+const { title = "AI-Driven Safe Aerial Robotics Workshop at ICRA 2026", active = "overview" } = Astro.props;
+const links = [
+  { id: "overview", label: "Overview", href: "/blog/icra2026/" },
+  { id: "speakers", label: "Speakers", href: "/blog/icra2026/speakers/" },
+  { id: "organizers", label: "Organizers", href: "/blog/icra2026/organizers/" },
+  { id: "agenda", label: "Agenda", href: "/blog/icra2026/agenda/" },
+];
+---
+
+<div class="icra-2026-workshop-page">
+  <Shape />
+  <section class="page-hero pb-8 pt-12">
+    <div class="container">
+      <div class="page-hero-content mx-auto max-w-[920px] text-center">
+        <h1 class="page-title mb-5 mt-0">{title}</h1>
+        <img
+          src="/images/icra-2026-workshop-banner.jpg"
+          alt="AI-Driven Safe Aerial Robotics workshop at ICRA 2026"
+          class="icra-2026-workshop-banner"
+        />
+        <p class="workshop-event-meta">June 5, 2026 · 8:30 am–5:00 pm · Meeting Room Lehar 2 · Vienna, Austria</p>
+      </div>
+      <nav class="workshop-subnav" aria-label="ICRA 2026 workshop pages">
+        {links.map((link) => (
+          <a
+            href={link.href}
+            class:list={["workshop-subnav-link", { active: active === link.id }]}
+            aria-current={active === link.id ? "page" : undefined}
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+    </div>
+  </section>
+  <section class="section pt-0">
+    <div class="container">
+      <div class="content mx-auto max-w-[920px]"><slot /></div>
+    </div>
+  </section>
+</div>

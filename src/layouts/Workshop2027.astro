@@ -1,0 +1,43 @@
+---
+import Base from "@/layouts/Base.astro";
+import Shape from "@/components/Shape.astro";
+
+const workshopTitle = "ICRA 2027 Workshop: Wake Up, Aerial Robotics";
+const { meta_title, description, active = "overview" } = Astro.props;
+---
+
+<Base title={workshopTitle} meta_title={meta_title || workshopTitle} description={description}>
+  <div class="icra-2027-page">
+    <Shape />
+    <section class="page-hero pb-8 pt-12">
+      <div class="container">
+        <div class="page-hero-content mx-auto max-w-[920px] text-center">
+          <h1 class="page-title mb-5 mt-0">{workshopTitle}</h1>
+          <img
+            class="icra-2027-banner"
+            src="/images/icra-2027-logo.jpg"
+            alt="ICRA 2027 Seoul logo"
+          />
+          <p class="workshop-event-meta">Convention &amp; Exhibition Center, Seoul, South Korea</p>
+        </div>
+        <nav class="workshop-subnav" aria-label="ICRA 2027 workshop sections">
+          <a
+            class:list={["workshop-subnav-link", { active: active === "overview" }]}
+            href="/ws-icra-2027/"
+            aria-current={active === "overview" ? "page" : undefined}
+          >Overview</a>
+          <a
+            class:list={["workshop-subnav-link", { active: active === "schedule" }]}
+            href="/ws-icra-2027/schedule/"
+            aria-current={active === "schedule" ? "page" : undefined}
+          >Agenda</a>
+        </nav>
+      </div>
+    </section>
+    <section class="section pt-0">
+      <div class="container">
+        <div class="content mx-auto max-w-[920px]"><slot /></div>
+      </div>
+    </section>
+  </div>
+</Base>

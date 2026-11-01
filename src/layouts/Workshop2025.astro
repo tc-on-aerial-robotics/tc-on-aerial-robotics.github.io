@@ -1,0 +1,56 @@
+---
+import Base from "@/layouts/Base.astro";
+import Shape from "@/components/Shape.astro";
+
+const title = "25 Years of Aerial Robotics: Challenges and Opportunities";
+const { active = "overview" } = Astro.props;
+const links = [
+  { id: "overview", label: "Overview", href: "/ws-icra-2025/" },
+  { id: "call", label: "Call for Contributions", href: "/ws-icra-2025/call-for-contributions/" },
+  { id: "speakers", label: "Speakers", href: "/ws-icra-2025/speakers/" },
+  { id: "organizers", label: "Organizers", href: "/ws-icra-2025/organizers/" },
+  { id: "agenda", label: "Agenda", href: "/ws-icra-2025/agenda/" },
+];
+---
+
+<Base title={title} meta_title={`${title} | IEEE RAS TC on Aerial Robotics and UAVs`}>
+  <div class="icra-2025-workshop-page">
+    <Shape />
+    <section class="page-hero pb-8 pt-12">
+      <div class="container">
+        <div class="page-hero-content mx-auto max-w-[920px] text-center">
+          <h1 class="page-title mb-5 mt-0">{title}</h1>
+          <div class="icra-2025-workshop-banner">
+            <img
+              class="icra-2025-logo"
+              src="https://2025.ieee-icra.org/wp-content/uploads/2024/04/ICRA-logo.png"
+              alt="ICRA: IEEE International Conference on Robotics and Automation"
+            />
+            <img
+              class="icra-2025-atlanta-logo"
+              src="https://2025.ieee-icra.org/wp-content/uploads/2024/11/23-TA-11-019-FExD-ATL-2025-Logo-1-RGB.jpg"
+              alt="Atlanta 2025"
+            />
+          </div>
+          <p class="workshop-event-meta">May 23, 2025 · 8:30 am–5:30 pm · Meeting Room 410 · Atlanta</p>
+        </div>
+        <nav class="workshop-subnav" aria-label="ICRA 2025 workshop pages">
+          {links.map((link) => (
+            <a
+              href={link.href}
+              class:list={["workshop-subnav-link", { active: active === link.id }]}
+              aria-current={active === link.id ? "page" : undefined}
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </section>
+    <section class="section pt-0">
+      <div class="container">
+        <div class="content mx-auto max-w-[920px]"><slot /></div>
+      </div>
+    </section>
+  </div>
+</Base>
